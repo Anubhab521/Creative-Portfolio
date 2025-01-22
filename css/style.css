@@ -2390,30 +2390,33 @@ footer p {
   color: #ccc;
 }
 
-/* Mobile-Friendly CSS (Add this at the very end of your file) */
-@media (max-width: 768px) {
-  body {
-      font-size: 14px; /* Smaller text for mobile */
-      padding: 10px;
-  }
-
-  nav ul {
-      display: flex;
-      flex-direction: column; /* Stack menu items vertically */
-      gap: 10px;
-      text-align: center;
-  }
-
-  .category-buttons {
-      flex-direction: column; /* Stack buttons vertically */
-  }
-
-  button, a {
-      font-size: 14px; /* Smaller buttons for mobile */
-      padding: 10px;
-  }
+/* Fix Navigation Layout */
+header nav ul {
+  display: flex; /* Make navigation items align in a row */
+  flex-direction: row; /* Ensure links stay in a single line */
+  justify-content: center; /* Center the menu in the header */
+  align-items: center; /* Align items vertically */
+  list-style-type: none; /* Remove bullets from list items */
+  padding: 0;
+  margin: 0;
 }
 
+header nav ul li {
+  margin: 0 15px; /* Add space between each menu item */
+}
+
+header nav ul li a {
+  text-decoration: none; /* Remove underline from links */
+  color: #fff; /* Keep links visible */
+  font-size: 1rem; /* Adjust the size of the text */
+  padding: 10px 15px; /* Add some padding around the links */
+  border-radius: 5px; /* Add a rounded corner for hover effect */
+}
+
+header nav ul li a:hover {
+  background-color: #444; /* Optional: Change background on hover */
+  color: #f39c12; /* Optional: Change text color on hover */
+}
 
 
 
