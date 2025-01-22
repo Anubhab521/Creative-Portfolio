@@ -2390,6 +2390,30 @@ footer p {
   color: #ccc;
 }
 
+/* Mobile-Friendly CSS (Add this at the very end of your file) */
+@media (max-width: 768px) {
+  body {
+      font-size: 14px; /* Smaller text for mobile */
+      padding: 10px;
+  }
+
+  nav ul {
+      display: flex;
+      flex-direction: column; /* Stack menu items vertically */
+      gap: 10px;
+      text-align: center;
+  }
+
+  .category-buttons {
+      flex-direction: column; /* Stack buttons vertically */
+  }
+
+  button, a {
+      font-size: 14px; /* Smaller buttons for mobile */
+      padding: 10px;
+  }
+}
+
 
 
 
