@@ -1,0 +1,2402 @@
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #222;
+  color: #fff;
+  line-height: 1.6;
+  padding-top: 70px; /* Adjust for the fixed header */
+  min-height: 100vh; /* Ensures body takes full viewport height */
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Header Section */
+header {
+  background: #333;
+  padding: 1rem;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+header nav ul {
+  list-style-type: none;
+}
+
+header nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+header nav ul li a {
+  color: #fff;
+  font-weight: bold;
+}
+
+/* Hero Section */
+#hero {
+  background-color: #222;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+}
+
+#hero .hero-content {
+  max-width: 700px;
+}
+
+#hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+#hero p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+#hero .btn {
+  background-color: #f39c12;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1.2rem;
+}
+
+#hero .btn:hover {
+  background-color: #e67e22;
+}
+
+/* About Me Section */
+#about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 90vh; /* Full viewport height */
+  padding: 3rem;
+  background-color: #333;
+  color: #fff;
+}
+
+#about h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+#about p {
+  font-size: 1.1rem;
+}
+
+/* Portfolio Section */
+#portfolio {
+  padding: 4rem;
+  background-color: #222;
+}
+
+#portfolio h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* Portfolio Category Sections */
+section h3 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #f39c12;
+}
+
+.category-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.category-buttons button {
+  background-color: #333;
+  padding: 15px;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.category-buttons button a {
+  color: #fff;
+  font-size: 1rem;
+}
+
+.category-buttons button:hover {
+  background-color: #444;
+}
+
+.category-buttons button a:hover {
+  color: #f39c12;
+}
+
+/* Contact Section */
+#contact {
+  padding: 3rem;
+  background-color: #333;
+  color: #fff;
+}
+
+#contact h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+label {
+  font-size: 1.2rem;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+textarea {
+  resize: vertical;
+}
+
+button[type="submit"] {
+  background-color: #f39c12;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1.2rem;
+}
+
+button[type="submit"]:hover {
+  background-color: #e67e22;
+}
+
+/* Footer Section */
+footer {
+  background-color: #222;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+  margin-top: auto; /* Ensures footer stays at bottom if content is less */
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Poster Section */
+#poster-section {
+  text-align: center;
+  padding: 20px;
+  background-color: #222; /* Matches the dark theme */
+}
+
+#poster-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #f39c12;
+}
+
+.poster-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.poster-item {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 300px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.poster-item img {
+  max-width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.poster-item h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #f39c12;
+}
+
+.poster-item p {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+/* Matte Painting Section */
+#matte-painting-section {
+  text-align: center;
+  padding: 20px;
+  background-color: #222; /* Matches the dark theme */
+}
+
+#matte-painting-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #f39c12;
+}
+
+.matte-painting-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.matte-painting-item {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 300px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.matte-painting-item img {
+  max-width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.matte-painting-item h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #f39c12;
+}
+
+.matte-painting-item p {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+/* Logo Design Section */
+#logo-design-section {
+  text-align: center;
+  padding: 20px;
+  background-color: #222; /* Matches the dark theme */
+}
+
+#logo-design-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #f39c12;
+}
+
+.logo-design-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.logo-design-item {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 300px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.logo-design-item img {
+  max-width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.logo-design-item h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #f39c12;
+}
+
+.logo-design-item p {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+/* Illustration Section */
+#illustration-section {
+  text-align: center;
+  padding: 20px;
+  background-color: #222; /* Matches the dark theme */
+}
+
+#illustration-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #f39c12;
+}
+
+.illustration-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.illustration-item {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 300px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.illustration-item img {
+  max-width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.illustration-item h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #f39c12;
+}
+
+.illustration-item p {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+/* Typography Section */
+#typography-section {
+  text-align: center;
+  padding: 20px;
+  background-color: #222; /* Matches the dark theme */
+}
+
+#typography-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #f39c12;
+}
+
+.typography-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.typography-item {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 300px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.typography-item img {
+  max-width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.typography-item h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #f39c12;
+}
+
+.typography-item p {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+/* Print Design Section */
+#print-design-section {
+  text-align: center;
+  padding: 20px;
+  background-color: #222; /* Matches the dark theme */
+}
+
+#print-design-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #f39c12;
+}
+
+.print-design-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.print-design-item {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 300px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.print-design-item img {
+  max-width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.print-design-item h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #f39c12;
+}
+
+.print-design-item p {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+/* UI/UX Design Section */
+#ui-ux-design-section {
+  text-align: center;
+  padding: 20px;
+  background-color: #222; /* Matches the dark theme */
+}
+
+#ui-ux-design-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #f39c12;
+}
+
+.ui-ux-design-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.ui-ux-design-item {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 300px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.ui-ux-design-item img {
+  max-width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.ui-ux-design-item h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #f39c12;
+}
+
+.ui-ux-design-item p {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+/* Web Design Section */
+#web-design-section {
+  text-align: center;
+  padding: 20px;
+  background-color: #222; /* Matches the dark theme */
+}
+
+#web-design-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #f39c12;
+}
+
+.web-design-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.web-design-item {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 300px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.web-design-item img {
+  max-width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.web-design-item h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #f39c12;
+}
+
+.web-design-item p {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+/* Icon Design Section */
+#icon-design-section {
+  text-align: center;
+  padding: 20px;
+  background-color: #222; /* Matches the dark theme */
+}
+
+#icon-design-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #f39c12;
+}
+
+.icon-design-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.icon-design-item {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 300px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.icon-design-item img {
+  max-width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.icon-design-item h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #f39c12;
+}
+
+.icon-design-item p {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+/* Packaging Design Section */
+#packaging-design-section {
+  text-align: center;
+  padding: 20px;
+  background-color: #222; /* Matches the dark theme */
+}
+
+#packaging-design-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #f39c12;
+}
+
+.packaging-design-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.packaging-design-item {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 300px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.packaging-design-item img {
+  max-width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.packaging-design-item h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #f39c12;
+}
+
+.packaging-design-item p {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+/* Short Films Section */
+#short-films-section {
+  text-align: center;
+  padding: 20px;
+  background-color: #222; /* Ensure this matches your dark theme */
+}
+
+#short-films-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #f39c12;
+}
+
+.video-editing-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.video-editing-item {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 600px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.video-editing-item video.video-editing-video {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.video-editing-item h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #f39c12;
+}
+
+.video-editing-item p {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+/* Music Videos Section */
+#music-videos-section {
+  text-align: center;
+  padding: 20px;
+  background-color: #222; /* Ensure this matches your dark theme */
+}
+
+#music-videos-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #f39c12;
+}
+
+.video-editing-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.video-editing-item {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 600px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.video-editing-item video.video-editing-video {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.video-editing-item h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #f39c12;
+}
+
+.video-editing-item p {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+
+/* Corporate Videos Section */
+#corporate-videos-section {
+  text-align: center;
+  padding: 20px;
+  background-color: #222; /* Ensure this matches your dark theme */
+}
+
+#corporate-videos-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #f39c12;
+}
+
+.video-editing-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.video-editing-item {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 600px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.video-editing-item video.video-editing-video {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.video-editing-item h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #f39c12;
+}
+
+.video-editing-item p {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+/* Back Button */
+.back-button {
+  text-align: center;
+  margin: 20px 0; /* Add space above and below */
+}
+
+.back-button a {
+  text-decoration: none; /* Remove underline */
+}
+
+.back-button button {
+  background-color: #00aaff;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.back-button button:hover {
+  background-color: #0099cc;
+  transform: scale(1.05);
+}
+
+.back-button button:focus {
+  outline: none;
+  box-shadow: 0 0 5px 2px #00aaff;
+}
+
+
+
+/* YouTube Content Section */
+#youtube-content-section {
+  text-align: center;
+  padding: 20px;
+  background-color: #222; /* Ensure this matches your dark theme */
+}
+
+#youtube-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #f39c12;
+}
+
+.video-editing-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.video-editing-item {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 600px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.video-editing-item iframe.video-editing-video {
+  width: 100%;
+  height: 315px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.video-editing-item h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #f39c12;
+}
+
+.video-editing-item p {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+
+/* Event Videos Section */
+#event-videos-section {
+  text-align: center;
+  padding: 20px;
+  background-color: #222; /* Ensure this matches your dark theme */
+}
+
+#event-videos h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #f39c12;
+}
+
+.video-editing-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.video-editing-item {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 600px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.video-editing-item video.video-editing-video {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.video-editing-item h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #f39c12;
+}
+
+.video-editing-item p {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+
+/* Documentaries Section */
+#documentaries-section {
+  text-align: center;
+  padding: 20px;
+  background-color: #222; /* Ensure this matches your dark theme */
+}
+
+#documentaries h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #f39c12;
+}
+
+.video-editing-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.video-editing-item {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 300px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.video-editing-item video.video-editing-video {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.video-editing-item h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #f39c12;
+}
+
+.video-editing-item p {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+
+/* Social Media Content Section */
+#social-media-content-section {
+  text-align: center;
+  padding: 20px;
+  background-color: #222; /* Ensure this matches your dark theme */
+}
+
+#social-media-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #f39c12;
+}
+
+.video-editing-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.video-editing-item {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 600px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.video-editing-item video.video-editing-video {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.video-editing-item h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #f39c12;
+}
+
+.video-editing-item p {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+/* Motion Graphics Section */
+#motion-graphics-section {
+  text-align: center;
+  padding: 20px;
+  background-color: #222; /* Ensure this matches your dark theme */
+}
+
+#motion-graphics-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #f39c12;
+}
+
+.video-editing-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.video-editing-item {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 600px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.video-editing-item video.video-editing-video {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.video-editing-item h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #f39c12;
+}
+
+.video-editing-item p {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+
+/* compositing Section Styles */
+#compositing-section {
+  text-align: center;
+  padding: 20px;
+  background-color: #222; /* Ensure this matches your dark theme */
+}
+
+#compositing-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #f39c12;
+}
+
+.vfx-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.vfx-item {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.vfx-video {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.vfx-item h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #f39c12;
+}
+
+.vfx-item p {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+
+/* Footer */
+footer {
+  background-color: #111;
+  color: #ccc;
+  padding: 20px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* keying Section Styles */
+#keying-section {
+  text-align: center;
+  padding: 20px;
+  background-color: #222; /* Ensure this matches your dark theme */
+}
+
+#keying-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #f39c12;
+}
+
+.vfx-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.vfx-item {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.vfx-video {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.vfx-item h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #f39c12;
+}
+
+.vfx-item p {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+
+footer {
+  background-color: #111;
+  color: #ccc;
+  padding: 20px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* matchmoving Section Styles */
+#matchmoving-section {
+  text-align: center;
+  padding: 20px;
+  background-color: #222; /* Ensure this matches your dark theme */
+}
+
+#matchmoving-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #f39c12;
+}
+
+.vfx-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.vfx-item {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.vfx-video {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.vfx-item h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #f39c12;
+}
+
+.vfx-item p {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+/* particles Section Styles */
+#particles-section {
+  text-align: center;
+  padding: 20px;
+  background-color: #222; /* Ensure this matches your dark theme */
+}
+
+#particles-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #f39c12;
+}
+
+.vfx-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.vfx-item {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.vfx-video {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.vfx-item h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #f39c12;
+}
+
+.vfx-item p {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+/* rotoscoping Section Styles */
+#rotoscoping-section {
+  text-align: center;
+  padding: 20px;
+  background-color: #222; /* Ensure this matches your dark theme */
+}
+
+#rotoscoping-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #f39c12;
+}
+
+.vfx-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.vfx-item {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.vfx-video {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.vfx-item h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #f39c12;
+}
+
+.vfx-item p {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+
+/* simulation Section Styles */
+#simulation-section {
+  text-align: center;
+  padding: 20px;
+  background-color: #222; /* Ensure this matches your dark theme */
+}
+
+#simulation-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #f39c12;
+}
+
+.vfx-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.vfx-item {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.vfx-video {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.vfx-item h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #f39c12;
+}
+
+.vfx-item p {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+/* Animation Section Styles */
+#animation-section {
+  text-align: center;
+  padding: 20px;
+  background-color: #222; /* Ensure this matches your dark theme */
+}
+
+#animation-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #f39c12;
+}
+
+.big_animation-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.big_animation-item {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.big_animation-video {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.big_animation-item h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #f39c12;
+}
+
+.big_animation-item p {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+/* Back Button Styling */
+.back-button {
+  text-align: center; /* Center the button */
+  margin: 20px 0; /* Add space above and below */
+}
+
+.back-button a {
+  text-decoration: none; /* Remove underline */
+}
+
+.back-button button {
+  background-color: #00aaff; /* Bright blue background */
+  color: #fff; /* White text for contrast */
+  padding: 10px 20px; /* Add space inside the button */
+  font-size: 16px; /* Readable font size */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Smooth rounded edges */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  transition: background-color 0.3s, transform 0.2s; /* Smooth hover effect */
+}
+
+/* Back Button Hover Effect */
+.back-button button:hover {
+  background-color: #0099cc; /* Darker blue on hover */
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Back Button Focus Effect */
+.back-button button:focus {
+  outline: none; /* Remove default focus outline */
+  box-shadow: 0 0 5px 2px #00aaff; /* Blue glow effect */
+}
+
+/* lighting Section Styles */
+#lighting-section {
+  text-align: center;
+  padding: 20px;
+  background-color: #222; /* Ensure this matches your dark theme */
+}
+
+#lighting-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #f39c12;
+}
+
+.big_animation-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.big_animation-item {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.big_animation-video {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.big_animation-item h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #f39c12;
+}
+
+.big_animation-item p {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+/* modeling Section Styles */
+#modeling-section {
+  text-align: center;
+  padding: 20px;
+  background-color: #222; /* Ensure this matches your dark theme */
+}
+
+#modeling-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #f39c12;
+}
+
+.big_animation-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.big_animation-item {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.big_animation-video {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.big_animation-item h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #f39c12;
+}
+
+.big_animation-item p {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+/* rendering Section Styles */
+#rendering-section {
+  text-align: center;
+  padding: 20px;
+  background-color: #222; /* Ensure this matches your dark theme */
+}
+
+#rendering-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #f39c12;
+}
+
+.big_animation-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.big_animation-item {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.big_animation-video {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.big_animation-item h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #f39c12;
+}
+
+.big_animation-item p {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+/* rigging Section Styles */
+#rigging-section {
+  text-align: center;
+  padding: 20px;
+  background-color: #222; /* Ensure this matches your dark theme */
+}
+
+#rigging-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #f39c12;
+}
+
+.big_animation-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.big_animation-item {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.big_animation-video {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.big_animation-item h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #f39c12;
+}
+
+.big_animation-item p {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+/* simulations Section Styles */
+#simulations-section {
+  text-align: center;
+  padding: 20px;
+  background-color: #222; /* Ensure this matches your dark theme */
+}
+
+#simulations-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #f39c12;
+}
+
+.big_animation-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.big_animation-item {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.big_animation-video {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.big_animation-item h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #f39c12;
+}
+
+.big_animation-item p {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+/* texturing Section Styles */
+#texturing-section {
+  text-align: center;
+  padding: 20px;
+  background-color: #222; /* Ensure this matches your dark theme */
+}
+
+#texturing-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #f39c12;
+}
+
+.big_animation-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.big_animation-item {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.big_animation-video {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.big_animation-item h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #f39c12;
+}
+
+.big_animation-item p {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+/* big_animation Section Styles */
+#big_animation-section {
+  text-align: center;
+  padding: 20px;
+  background-color: #222; /* Ensure this matches your dark theme */
+}
+
+#big_animation-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #f39c12;
+}
+
+.animation-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.animation-item {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.animation-video {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.animation-item h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #f39c12;
+}
+
+.animation-item p {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+/* character-animation Section Styles */
+#character-animation-section {
+  text-align: center;
+  padding: 20px;
+  background-color: #222; /* Ensure this matches your dark theme */
+}
+
+#character-animation-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #f39c12;
+}
+
+.animation-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.animation-item {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.animation-video {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.animation-item h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #f39c12;
+}
+
+.animation-item p {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+/* Motion Graphics Section Styles */
+#motion-graphics-section {
+  text-align: center;
+  padding: 20px;
+  background-color: #222; /* Ensure this matches your dark theme */
+}
+
+#motion-graphics-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #f39c12; /* Accent color */
+}
+
+.animation-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.animation-item {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.animation-video {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.animation-item h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #f39c12; /* Accent color */
+}
+
+.animation-item p {
+  font-size: 1rem;
+  color: #ccc; /* Light text color */
+}
+
+
+
+/* 2D Animation Section Styles */
+#small_animation-section {
+  text-align: center;
+  padding: 20px;
+  background-color: #222; /* Ensure this matches your dark theme */
+}
+
+#small_animation-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #f39c12;
+}
+
+.animation-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.animation-item {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.animation-video {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.animation-item h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #f39c12;
+}
+
+.animation-item p {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+/* Stop Motion Section Styles */
+#stop-motion-section {
+  text-align: center;
+  padding: 20px;
+  background-color: #222; /* Ensure this matches your dark theme */
+}
+
+#stop-motion-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #f39c12;
+}
+
+.animation-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.animation-item {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.animation-video {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.animation-item h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #f39c12;
+}
+
+.animation-item p {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+/* Visual Effects Animation Section Styles */
+#visual-effects-animation-section {
+  text-align: center;
+  padding: 20px;
+  background-color: #222; /* Matches the dark theme */
+}
+
+#visual-effects-animation-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #f39c12; /* Accent color */
+}
+
+.animation-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.animation-item {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.animation-video {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.animation-item h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #f39c12; /* Accent color */
+}
+
+.animation-item p {
+  font-size: 1rem;
+  color: #ccc; /* Light text color */
+}
+
+/* Backend Development Section */
+#backend-development-section {
+  text-align: center;
+  padding: 20px;
+  background-color: #222; /* Matches the dark theme */
+}
+
+#backend-development-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #f39c12;
+}
+
+.web-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.web-item {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 300px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.web-item img.web-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.web-item h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #f39c12;
+}
+
+.web-item p {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+/* CMS Design Section */
+#cms-design-section {
+  text-align: center;
+  padding: 20px;
+  background-color: #222; /* Matches the dark theme */
+}
+
+#cms-design-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #f39c12;
+}
+
+.web-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.web-item {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 300px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.web-item .web-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.web-item h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #f39c12;
+}
+
+.web-item p {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+/* E-commerce Section */
+#ecommerce-section {
+  text-align: center;
+  padding: 20px;
+  background-color: #222; /* Matches the dark theme */
+}
+
+#ecommerce-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #f39c12;
+}
+
+.web-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.web-item {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 300px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.web-item .web-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.web-item h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #f39c12;
+}
+
+.web-item p {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+/* Frontend Development Section */
+#frontend-development-section {
+  text-align: center;
+  padding: 20px;
+  background-color: #222; /* Matches the dark theme */
+}
+
+#frontend-development-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #f39c12;
+}
+
+.web-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.web-item {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 300px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.web-item .web-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.web-item h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #f39c12;
+}
+
+.web-item p {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+/* Responsive Web Design Section */
+#responsive-web-design-section {
+  text-align: center;
+  padding: 20px;
+  background-color: #222; /* Matches the dark theme */
+}
+
+#responsive-web-design-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #f39c12;
+}
+
+.web-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.web-item {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 300px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.web-item .web-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.web-item h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #f39c12;
+}
+
+.web-item p {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+/* Web Accessibility Section */
+#web-accessibility-section {
+  text-align: center;
+  padding: 20px;
+  background-color: #222; /* Matches the dark theme */
+}
+
+#web-accessibility-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #f39c12;
+}
+
+.web-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.web-item {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 300px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.web-item .web-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.web-item h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #f39c12;
+}
+
+.web-item p {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+/* Web Animation Section */
+#web-animation-section {
+  text-align: center;
+  padding: 20px;
+  background-color: #222; /* Matches the dark theme */
+}
+
+#web-animation-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #f39c12;
+}
+
+.web-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.web-item {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 300px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.web-item .web-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.web-item h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #f39c12;
+}
+
+.web-item p {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+
+
+
+
+
+
+
+
+
+
