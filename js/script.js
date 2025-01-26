@@ -56,8 +56,11 @@ floatingElements.forEach(element => {
     element.style.animationDelay = `${randomDelay}s`;
 });
 
+// Initialize EmailJS
+emailjs.init("Cmz2KyFVlIvPJ1pXk");
+
 // Contact Form Submission
-const contactForm = document.querySelector("form");
+const contactForm = document.querySelector("#contact-form");
 if (contactForm) {
     contactForm.addEventListener("submit", (event) => {
         event.preventDefault(); // Prevent the default form submission
@@ -67,9 +70,29 @@ if (contactForm) {
         const message = document.querySelector("textarea[name='message']").value;
 
         if (name && email && message) {
-            // Send an email using a backend service (like EmailJS or your server)
-            const mailtoLink = `mailto:your-email@example.com?subject=Portfolio Contact - ${name}&body=Email: ${email}%0D%0A%0D%0A${message}`;
-            window.location.href = mailtoLink;
+            // Use EmailJS to send the email
+            const templateParams = {
+                from_name: name,
+                from_email: email,
+                message: message,
+            };
+
+            // Optional: Disable the button and show a loading state
+            const submitButton = contactForm.querySelector("button[type='submit']");
+            submitButton.disabled = true;
+            submitButton.textContent = "Sending...";
+
+            emailjs.send("service_lvbjt2f", "template_r5c9aco", templateParams)
+                .then((response) => {
+                    alert("Your message has been sent successfully!");
+                    submitButton.disabled = false;
+                    submitButton.textContent = "Send Message";
+                    contactForm.reset(); // Reset form after successful submission
+                }, (error) => {
+                    alert("There was an error sending your message. Please try again later.");
+                    submitButton.disabled = false;
+                    submitButton.textContent = "Send Message";
+                });
         } else {
             alert("Please fill out all fields before sending.");
         }
