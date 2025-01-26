@@ -57,7 +57,7 @@ floatingElements.forEach(element => {
 });
 
 // Initialize EmailJS
-emailjs.init("Cmz2KyFVlIvPJ1pXk");
+emailjs.init("Cmz2KyFVlIvPJ1pXk"); // Your EmailJS User ID
 
 // Contact Form Submission
 const contactForm = document.querySelector("#contact-form");
