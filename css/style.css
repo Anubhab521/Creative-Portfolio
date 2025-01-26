@@ -2458,6 +2458,45 @@ header nav ul li a:hover {
 }
 
 
+/* Responsive Navigation for Mobile */
+@media (max-width: 768px) {
+  header nav ul {
+    gap: 5px; /* Reduce spacing between menu items for smaller screens */
+  }
+
+  header nav ul li a {
+    font-size: 0.9rem; /* Make the text slightly smaller on mobile */
+    padding: 6px 10px; /* Reduce padding for better fit */
+  }
+
+  header {
+    padding: 10px 0; /* Reduce overall header padding for more space */
+  }
+}
+
+/* Adjust Button Size for Mobile */
+@media (max-width: 768px) {
+  button {
+    font-size: 0.8rem; /* Smaller text */
+    padding: 6px 10px; /* Reduced padding */
+    border-radius: 3px; /* Compact corners */
+  }
+
+  .category-buttons {
+    gap: 8px; /* Smaller spacing between buttons */
+  }
+}
+
+/* Further Adjustments for Very Small Screens */
+@media (max-width: 576px) {
+  button {
+    font-size: 0.7rem; /* Even smaller text */
+    padding: 4px 8px; /* Tiny padding for small screens */
+  }
+}
+
+
+
 
 
 
