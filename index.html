@@ -7,11 +7,6 @@
     <link rel="stylesheet" href="css/style.css" />
     <!-- Include your main JavaScript with defer so it loads after HTML parsing -->
     <script defer src="js/script.js"></script>
-    <!-- EmailJS Script: include once here in the head -->
-    <script
-      type="text/javascript"
-      src="https://cdn.emailjs.com/dist/email.min.js"
-    ></script>
   </head>
   <body class="dark-theme">
     <header>
@@ -297,16 +292,27 @@
       </section>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Contact Section (Formspree Integration) -->
     <section id="contact">
       <h2>Contact Me</h2>
-      <form id="contact-form">
+      <!-- Replace {your_form_id} with your actual Formspree form ID -->
+      <form
+        id="contact-form"
+        action="https://formspree.io/f/mzzdvvob"
+        method="POST"
+      >
         <label for="name">Name</label>
         <input type="text" id="name" name="name" required />
+
         <label for="email">Email</label>
-        <input type="email" id="email" name="email" required />
+        <input type="email" id="email" name="_replyto" required />
+
         <label for="message">Message</label>
         <textarea id="message" name="message" rows="4" required></textarea>
+
+        <!-- Optional: Hidden input to redirect after submission -->
+        <!-- <input type="hidden" name="_next" value="https://anubhab521.github.io/thank-you.html" /> -->
+
         <button type="submit">Send Message</button>
       </form>
     </section>
