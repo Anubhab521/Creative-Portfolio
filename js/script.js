@@ -70,7 +70,7 @@ floatingElements.forEach(element => {
 // ------------------------------
 // IMPORTANT: Ensure you have included the EmailJS library in your HTML:
 // <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
-emailjs.init("ZWEiVJ7QhPzE9ZGW-"); // Replace with your actual EmailJS User ID
+emailjs.init("Im9hfTlAnxi7RhEfp"); // Replace with your actual EmailJS User ID
 
 // ------------------------------
 // 6. Contact Form Submission (Email Sending)
@@ -99,7 +99,7 @@ if (contactForm) {
             submitButton.textContent = "Sending...";
 
             // Use EmailJS to send the email.
-            emailjs.send("service_lvbjt2f", "template_r5c9aco", templateParams)
+            emailjs.send("service_wlfvgtk", "template_r5c9aco", templateParams)
                 .then((response) => {
                     alert("Your message has been sent successfully!");
                     submitButton.disabled = false;
