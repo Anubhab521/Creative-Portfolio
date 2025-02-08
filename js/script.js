@@ -32,13 +32,23 @@ if (toggleThemeButton) {
 const navLinks = document.querySelectorAll("nav a");
 navLinks.forEach(link => {
     link.addEventListener("click", (event) => {
-        event.preventDefault();
-        // Remove the leading '#' from the href attribute value.
-        const targetId = link.getAttribute("href").substring(1);
-        const targetElement = document.getElementById(targetId);
-        if (targetElement) {
-            targetElement.scrollIntoView({ behavior: "smooth" });
+        // Get the href value (e.g., "index.html#about" or "#about")
+        const href = link.getAttribute("href");
+        
+        // Check if the link is a hash-only link (starts with "#")
+        if (href.startsWith("#")) {
+            // Remove the leading '#' to get the id
+            const targetId = href.substring(1);
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                event.preventDefault(); // Prevent default if the target exists
+                targetElement.scrollIntoView({ behavior: "smooth" });
+            }
+            // If targetElement does not exist on the current page,
+            // do nothing so the browser can navigate to the link’s URL normally.
         }
+        // For links that are full URLs (e.g., "index.html#about" on thank-you.html),
+        // let the default navigation occur.
     });
 });
 
