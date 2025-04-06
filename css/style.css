@@ -2540,6 +2540,59 @@ header nav ul li a:hover {
 }
 
 
+/* ===== Lightbox Centering Fix ===== */
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.85);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.lightbox.show {
+  display: flex;
+}
+
+.lightbox-content {
+  max-width: 90%;
+  max-height: 90%;
+  margin: auto;
+  display: block;
+  border-radius: 10px;
+  box-shadow: 0 0 40px rgba(255, 255, 255, 0.2);
+  object-fit: contain;
+}
+
+.lightbox .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 32px;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+  z-index: 10000;
+  background-color: transparent;
+  border: none;
+}
+
+img, video {
+  -webkit-user-drag: none;       /* Safari/Chrome */
+  -moz-user-select: none;        /* Firefox */
+  -webkit-user-select: none;     /* Safari */
+  -ms-user-select: none;         /* Internet Explorer/Edge */
+  user-select: none;             /* Standard */
+  pointer-events: auto;
+}
+
+
 
 
 

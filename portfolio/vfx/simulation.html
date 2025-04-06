@@ -5,6 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Simulation Effects | Anubhab Jana Portfolio</title>
     <link rel="stylesheet" href="../../css/style.css" />
+    <script src="../../js/script.js" defer></script>
+    <script>
+      // Disable right-click on videos
+      document.addEventListener("DOMContentLoaded", function () {
+        const videos = document.querySelectorAll("video");
+        videos.forEach((video) => {
+          video.addEventListener("contextmenu", (e) => e.preventDefault());
+        });
+      });
+    </script>
     <!-- Optional base tag -->
     <!-- <base href="../../" /> -->
   </head>

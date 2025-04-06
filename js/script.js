@@ -106,5 +106,98 @@ document.addEventListener("DOMContentLoaded", function () {
         });
       });
     }
+        // ------------------------------
+    // 6. Double-Click Lightbox Popup for Posters
+    // ------------------------------
+    const posters = document.querySelectorAll(".double-click");
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    const closeBtn = document.querySelector(".lightbox .close");
+
+    if (posters && lightbox && lightboxImg && closeBtn) {
+      posters.forEach((img) => {
+        let clickCount = 0;
+        img.addEventListener("click", function () {
+          clickCount++;
+          setTimeout(() => {
+            if (clickCount === 2) {
+              lightbox.style.display = "block";
+              lightboxImg.src = this.src;
+            }
+            clickCount = 0;
+          }, 300);
+        });
+      });
+
+      closeBtn.addEventListener("click", function () {
+        lightbox.style.display = "none";
+        lightboxImg.src = "";
+      });
+
+      window.addEventListener("click", function (e) {
+        if (e.target === lightbox) {
+          lightbox.style.display = "none";
+          lightboxImg.src = "";
+        }
+      });
+        // ------------------------------
+  // 7. Disable Right-Click
+  // ------------------------------
+  document.addEventListener("contextmenu", function (e) {
+    e.preventDefault();
+  });
+
+  // ------------------------------
+  // 8. Disable Screenshot/DevTool Keys
+  // ------------------------------
+  document.addEventListener("keydown", function (e) {
+    if (
+      e.key === "PrintScreen" || // PrtSc key
+      (e.ctrlKey && e.key === "s") || // Ctrl+S
+      (e.ctrlKey && e.shiftKey && e.key === "i") || // Ctrl+Shift+I
+      e.key === "F12" || // F12
+      (e.ctrlKey && e.key === "u") // Ctrl+U
+    ) {
+      e.preventDefault();
+      alert("Screenshots and copying are disabled on this page.");
+    }
+  });
+
+  // ------------------------------
+  // 9. Prevent Dragging of Images/Videos
+  // ------------------------------
+  document.querySelectorAll("img, video").forEach((el) => {
+    el.setAttribute("draggable", "false");
+  });
+
+  // ------------------------------
+  // 10. Blur Screen if Dev Tools is Open
+  // ------------------------------
+  const blurDiv = document.createElement("div");
+  blurDiv.style.cssText = `
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: blur(20px);
+    z-index: 9999;
+    display: none;
+  `;
+  document.body.appendChild(blurDiv);
+
+  function detectDevTools() {
+    const widthThreshold = window.outerWidth - window.innerWidth > 100;
+    const heightThreshold = window.outerHeight - window.innerHeight > 100;
+    if (widthThreshold || heightThreshold) {
+      blurDiv.style.display = "block";
+    } else {
+      blurDiv.style.display = "none";
+    }
+  }
+
+  setInterval(detectDevTools, 1000);
+
+    }
   });
   

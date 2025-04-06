@@ -5,8 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Social Media Content | Anubhab Jana Portfolio</title>
     <link rel="stylesheet" href="../../css/style.css" />
-    <!-- Optional base tag -->
-    <!-- <base href="../../" /> -->
+    <script src="../../js/script.js" defer></script>
+    <script>
+      // Disable right-click on videos
+      document.addEventListener("DOMContentLoaded", function () {
+        const videos = document.querySelectorAll("video");
+        videos.forEach((video) => {
+          video.addEventListener("contextmenu", (e) => e.preventDefault());
+        });
+      });
+    </script>
   </head>
   <body class="dark-theme">
     <!-- Navigation Section -->
@@ -31,6 +39,7 @@
             <video
               src="../../assets/video/Video_1.mp4"
               controls
+              controlsList="nodownload"
               class="video-editing-video"
             ></video>
             <h2>Social Media Content Title 1</h2>
@@ -44,6 +53,7 @@
             <video
               src="social-media-2.mp4"
               controls
+              controlsList="nodownload"
               class="video-editing-video"
             ></video>
             <h2>Social Media Content Title 2</h2>
@@ -55,7 +65,7 @@
       </div>
     </main>
 
-    <!-- Back Button (Using JavaScript to mimic browser "back") -->
+    <!-- Back Button -->
     <div class="back-button">
       <button onclick="window.history.back()">Back</button>
     </div>

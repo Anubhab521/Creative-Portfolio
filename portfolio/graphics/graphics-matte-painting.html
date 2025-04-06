@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Matte Painting | Anubhab Jana Portfolio</title>
     <link rel="stylesheet" href="../../css/style.css" />
+    <script src="../../js/script.js"></script>
     <!-- Optional base tag removed -->
     <!-- <base href="../../" /> -->
   </head>
@@ -30,6 +31,7 @@
             <img
               src="../../assets/graphics/Poster/1.jpg"
               alt="Matte Painting 1"
+              class="poster double-click"
             />
             <h2>Matte Painting Title 1</h2>
             <p>Description for Matte Painting 1. This can be updated later.</p>
@@ -45,6 +47,12 @@
         </div>
       </div>
     </main>
+
+    <!-- Lightbox Modal (Add at the end of body tag) -->
+    <div id="lightbox" class="lightbox">
+      <span class="close">&times;</span>
+      <img class="lightbox-content" id="lightbox-img" alt="Full view" />
+    </div>
 
     <!-- Back Button (Using JavaScript to mimic browser "back") -->
     <div class="back-button">

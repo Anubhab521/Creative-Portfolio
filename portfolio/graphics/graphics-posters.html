@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="no-referrer" />
     <title>Posters | Anubhab Jana Portfolio</title>
     <link rel="stylesheet" href="../../css/style.css" />
-    <!-- Optional base tag -->
-    <!-- <base href="../../" /> -->
+    <script src="../../js/script.js"></script>
   </head>
   <body class="dark-theme">
     <!-- Navigation Section -->
@@ -31,9 +31,8 @@
             <img
               src="../../assets/graphics/Poster/1.jpg"
               alt="Poster 1"
-              class="poster-image"
+              class="poster double-click"
             />
-
             <h2>Poster Title 1</h2>
             <p>Description for Poster 1. This can be updated later.</p>
           </div>
@@ -41,18 +40,68 @@
           <!-- Poster 2 -->
           <div class="poster-item">
             <img
-              src="../../assets/graphics/Poster/1.jpg"
+              src="../../assets/graphics/Poster/2.png"
               alt="Poster 2"
-              class="poster-image"
+              class="poster double-click"
             />
             <h2>Poster Title 2</h2>
             <p>Description for Poster 2. This can be updated later.</p>
+          </div>
+
+          <!-- Poster 3 -->
+          <div class="poster-item">
+            <img
+              src="../../assets/graphics/Poster/3.jpg"
+              alt="Poster 3"
+              class="poster double-click"
+            />
+            <h2>Poster Title 3</h2>
+            <p>Description for Poster 3. This can be updated later.</p>
+          </div>
+
+          <!-- Poster 4 -->
+          <div class="poster-item">
+            <img
+              src="../../assets/graphics/Poster/4.jpg"
+              alt="Poster 4"
+              class="poster double-click"
+            />
+            <h2>Poster Title 4</h2>
+            <p>Description for Poster 4. This can be updated later.</p>
+          </div>
+
+          <!-- Poster 5 -->
+          <div class="poster-item">
+            <img
+              src="../../assets/graphics/Poster/1.jpg"
+              alt="Poster 5"
+              class="poster double-click"
+            />
+            <h2>Poster Title 5</h2>
+            <p>Description for Poster 5. This can be updated later.</p>
+          </div>
+
+          <!-- Poster 6 -->
+          <div class="poster-item">
+            <img
+              src="../../assets/graphics/Poster/1.jpg"
+              alt="Poster 6"
+              class="poster double-click"
+            />
+            <h2>Poster Title 6</h2>
+            <p>Description for Poster 6. This can be updated later.</p>
           </div>
         </div>
       </div>
     </main>
 
-    <!-- Back Button (Using JavaScript to mimic browser "back") -->
+    <!-- Lightbox Modal (Add at the end of body tag) -->
+    <div id="lightbox" class="lightbox">
+      <span class="close">&times;</span>
+      <img class="lightbox-content" id="lightbox-img" alt="Full view" />
+    </div>
+
+    <!-- Back Button -->
     <div class="back-button">
       <button onclick="window.history.back()">Back</button>
     </div>
@@ -61,5 +110,7 @@
     <footer>
       <p>&copy; 2024 Anubhab Jana. All rights reserved.</p>
     </footer>
+
+    <!-- Script link -->
   </body>
 </html>
