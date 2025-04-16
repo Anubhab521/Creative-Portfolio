@@ -5,9 +5,17 @@
   box-sizing: border-box;
 }
 
+html {
+  /* Adjust this value to match the height of your sticky header */
+  scroll-padding-top: 80px;
+  /* Enable smooth scrolling */ 
+  scroll-behavior: smooth;  
+}
+
 body {
   font-family: Arial, sans-serif;
-  background-color: #222;
+  background-color: #222; 
+  /* Dark theme background */
   color: #fff;
   line-height: 1.6;
   padding-top: 70px; /* Adjust for the fixed header */
@@ -48,29 +56,71 @@ header {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
+/* General Navigation Menu Styles */
 header nav ul {
-  list-style-type: none;
-}
-
-header nav ul li {
-  display: inline;
-  margin-right: 20px;
+  display: flex; /* Use flexbox for layout */
+  justify-content: center; /* Center the navigation items */
+  align-items: center; /* Align items vertically */
+  list-style-type: none; /* Remove bullets from list items */
+  padding: 0;
+  margin: 0;
+  gap: 20px; /* Default spacing between menu items */
+  flex-wrap: nowrap; /* Prevent items from wrapping to the next line */
+   /* Allow horizontal scrolling if items overflow */
+   /* overflow-x: auto; */
 }
 
 header nav ul li a {
-  color: #fff;
-  font-weight: bold;
+  text-decoration: none; /* Remove underline from links */
+  color: #fff; /* White text for contrast */
+  font-size: 1rem; /* Default size for desktop */
+  padding: 8px 12px; /* Add padding for better spacing */
+  border-radius: 5px; /* Add a rounded corner for hover effect */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover effect */
+  white-space: nowrap; /* Prevent text from wrapping */
+}
+
+header nav ul li a:hover {
+  background-color: #444; /* Optional: Change background on hover */
+  color: #f39c12; /* Optional: Change text color on hover */
+}
+
+/* Responsive Navigation for Mobile */
+@media (max-width: 768px) {
+  header nav ul {
+    flex-wrap: nowrap; /* Ensure items stay in one line */
+     /* Allow horizontal scrolling if needed */
+     /* overflow-x: auto; */
+    gap: 10px; /* Reduce spacing between menu items for smaller screens */
+  }
+
+  header nav ul li a {
+    font-size: 0.9rem; /* Make the text slightly smaller on mobile */
+    padding: 6px 10px; /* Reduce padding for better fit */
+  }
+
+  header {
+    padding: 10px 0; /* Reduce overall header padding for more space */
+  }
 }
 
 /* Hero Section */
 #hero {
-  background-color: #222;
-  height: 90vh;
+  background: linear-gradient(135deg, #1e1e1e, #333); /* Gradient background */
+  background-size: 300% 300%; /* For smooth animation */
+  animation: gradientAnimation 10s ease infinite; /* Gradient animation */
+  height: calc(100vh - 70px); /* Subtract the height of the sticky header */
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   color: #fff;
+}
+
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 #hero .hero-content {
@@ -80,6 +130,7 @@ header nav ul li a {
 #hero h1 {
   font-size: 3rem;
   margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Subtle text shadow */
 }
 
 #hero p {
@@ -88,48 +139,200 @@ header nav ul li a {
 }
 
 #hero .btn {
-  background-color: #f39c12;
+  background-color: #f39c12; /* Accent color for buttons */
   padding: 10px 20px;
   border-radius: 5px;
   font-size: 1.2rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 #hero .btn:hover {
-  background-color: #e67e22;
+  background-color: #e67e22; /* Slightly darker on hover */
+  transform: scale(1.05); /* Subtle zoom effect */
 }
 
 /* About Me Section */
+/* Added a custom background image with a semi-transparent overlay */
 #about {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  height: 90vh; /* Full viewport height */
-  padding: 3rem;
-  background-color: #333;
-  color: #fff;
+  /* Background image */
+  background: url('../assets/About_Me_Bg/BG.jpg') no-repeat center center/cover; 
+  color: #fff; /* White text for contrast */
+  padding: 3rem; /* Add spacing inside the section */
+  text-align: center; /* Center-align the text */
+  border-radius: 15px; /* Optional: Rounded corners */
+  position: relative; /* Ensure content stays above the background */
+  min-height: 100vh; /* Make the section take up the full viewport height */
+  display: flex; /* Center content vertically and horizontally */
+  flex-direction: column; /* Stack content vertically */
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
+}
+
+#about::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Optional overlay */
+  z-index: 1;
+}
+
+#about * {
+  position: relative;
+  z-index: 2;
 }
 
 #about h2 {
   font-size: 2.5rem;
   margin-bottom: 1.5rem;
+  color: #f39c12; /* Accent color for the heading */
 }
 
 #about p {
   font-size: 1.1rem;
+  color: #fff; /* Ensure text is readable on the background */
+  max-width: 800px; /* Limit the width of the text for better readability */
+  line-height: 1.8; /* Improve text spacing */
+}
+
+.about-container {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center items horizontally */
+  gap: 20px; /* Add spacing between text and image */
+}
+
+.about-text {
+  text-align: center; /* Center the text */
+  margin: 0 auto; /* Center the text block */
+}
+
+.about-image img {
+  max-width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Skills & Tools Section */
+#skills {
+  padding: 50px 20px; /* Default padding for larger screens */
+  margin-top: 120px; /* Add space between the section and the navigation menu */
+  background: linear-gradient(135deg, #1e1e1e, #2a2a2a); /* Subtle gradient */
+  color: #fff;
+  text-align: center;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  margin: 50px auto;
+  max-width: 900px; /* Limit the width of the section */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#skills h2 {
+  font-size: 2rem; /* Default heading size */
+  color: #ff9800; /* Accent color */
+  margin-bottom: 20px;
+}
+
+#skills p {
+  font-size: 1.1rem; /* Default paragraph size */
+  color: #ccc;
+  margin-bottom: 40px;
+}
+
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive grid */
+  gap: 30px;
+  justify-items: center;
+}
+
+.skill h3 {
+  margin-top: 10px;
+  font-size: 1.1rem;
+  color: #ff9800; /* Accent color */
+}
+
+/* Responsive Styles for Mobile */
+@media (max-width: 768px) {
+  #skills {
+    padding: 30px 15px; /* Reduce padding for smaller screens */
+    margin: 30px auto; /* Adjust margin */
+    max-width: 100%; /* Allow full width on mobile */
+  }
+
+  #skills h2 {
+    font-size: 1.8rem; /* Slightly smaller heading size */
+    margin-bottom: 15px; /* Reduce spacing below heading */
+  }
+
+  #skills p {
+    font-size: 1rem; /* Reduce paragraph size */
+    margin-bottom: 20px; /* Reduce spacing below paragraph */
+  }
+
+  .skills-container {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Smaller grid items */
+    gap: 20px; /* Reduce spacing between items */
+  }
+
+  .skill h3 {
+    font-size: 1rem; /* Slightly smaller skill titles */
+  }
+}
+
+@media (max-width: 576px) {
+  #skills {
+    padding: 20px 10px; /* Further reduce padding for very small screens */
+  }
+
+  #skills h2 {
+    font-size: 1.5rem; /* Smaller heading size */
+  }
+
+  #skills p {
+    font-size: 0.9rem; /* Smaller paragraph size */
+  }
+
+  .skills-container {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Smaller grid items */
+    gap: 15px; /* Reduce spacing further */
+  }
+
+  .skill h3 {
+    font-size: 0.9rem; /* Smaller skill titles */
+  }
+}
+
+/* Divider between Skills & Tools and Portfolio Section */
+.skills-divider {
+  height: 0px;
+  background: linear-gradient(to right, #1e1e1e, #333); /* Angled divider */
+  clip-path: polygon(100%0 0, 100% 100%, 0 100%);
 }
 
 /* Portfolio Section */
+/* Alternating background colors for visual separation */
 #portfolio {
   padding: 4rem;
   background-color: #222;
+}
+
+.portfolio-category:nth-child(even) {
+  background-color: #1e1e1e;
+}
+
+.portfolio-category:nth-child(odd) {
+  background-color: #333;
 }
 
 #portfolio h2 {
   font-size: 2.5rem;
   margin-bottom: 1.5rem;
   text-align: center;
+  color: #f39c12; /* Accent color */
 }
 
 /* Portfolio Category Sections */
@@ -169,16 +372,19 @@ section h3 {
 }
 
 /* Contact Section */
+/* Added gradient background for a polished look */
 #contact {
   padding: 3rem;
-  background-color: #333;
+  background: linear-gradient(135deg, #333, #1e1e1e);
   color: #fff;
+  text-align: center;
+  border-radius: 15px;
 }
 
 #contact h2 {
   font-size: 2.5rem;
   margin-bottom: 1.5rem;
-  text-align: center;
+  color: #f39c12; /* Accent color */
 }
 
 form {
@@ -213,10 +419,12 @@ button[type="submit"] {
   padding: 10px 20px;
   border-radius: 5px;
   font-size: 1.2rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 button[type="submit"]:hover {
   background-color: #e67e22;
+  transform: scale(1.05); /* Subtle zoom effect */
 }
 
 /* Footer Section */
@@ -229,6 +437,14 @@ footer {
   position: relative;
   bottom: 0;
   width: 100%;
+}
+
+/* Section Dividers */
+/* Added angled dividers for modern transitions between sections */
+.section-divider {
+  height: 50px;
+  background: linear-gradient(to right, #1e1e1e, #333);
+  clip-path: polygon(0 0, 100% 100%, 0 100%);
 }
 
 /* Poster Section */
@@ -2590,6 +2806,198 @@ img, video {
   -ms-user-select: none;         /* Internet Explorer/Edge */
   user-select: none;             /* Standard */
   pointer-events: auto;
+}
+
+/* General Mobile Styles */
+@media (max-width: 768px) {
+  /* Body */
+  body {
+    padding-top: 50px; /* Adjust padding for smaller headers */
+  }
+
+  /* Header */
+  header {
+    padding: 10px 0; /* Reduce header padding */
+  }
+
+  header nav ul {
+    flex-direction: row; /* Stack navigation links vertically */
+    gap: 10px; /* Add spacing between links */
+  }
+
+  header nav ul li a {
+    font-size: 0.9rem; /* Reduce font size for links */
+    padding: 8px 12px; /* Adjust padding for smaller screens */
+  }
+
+  /* Hero Section */
+  #hero h1 {
+    font-size: 2rem; /* Reduce font size for the main heading */
+  }
+
+  #hero p {
+    font-size: 1rem; /* Reduce font size for the paragraph */
+  }
+
+  #hero .btn {
+    font-size: 1rem; /* Adjust button size */
+    padding: 8px 16px; /* Reduce padding */
+  }
+
+  /* About Me Section */
+  #about h2 {
+    font-size: 2rem; /* Reduce heading size */
+  }
+
+  #about p {
+    font-size: 1rem; /* Adjust paragraph size */
+    max-width: 100%; /* Allow text to take full width */
+  }
+
+  .about-container {
+    flex-direction: column; /* Stack text and image vertically */
+    gap: 15px; /* Adjust spacing */
+  }
+
+  .about-image img {
+    max-width: 90%; /* Reduce image size */
+  }
+
+  /* Skills & Tools Section */
+  #skills h2 {
+    font-size: 1.8rem; /* Reduce heading size */
+  }
+
+  #skills p {
+    font-size: 1rem; /* Adjust paragraph size */
+  }
+
+  .skills-container {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Smaller grid items */
+    gap: 20px; /* Reduce spacing */
+  }
+
+  /* Portfolio Section */
+  #portfolio h2 {
+    font-size: 2rem; /* Reduce heading size */
+  }
+
+  #portfolio section h3 {
+    font-size: 1.5rem; /* Adjust subsection heading size */
+  }
+
+  .category-buttons {
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 10px; /* Reduce spacing between buttons */
+  }
+
+  .category-buttons button {
+    font-size: 1rem; /* Adjust button size */
+    padding: 10px; /* Reduce padding */
+  }
+
+  /* Contact Section */
+  #contact h2 {
+    font-size: 2rem; /* Reduce heading size */
+  }
+
+  form {
+    gap: 0.8rem; /* Reduce spacing between form elements */
+  }
+
+  input,
+  textarea {
+    font-size: 1rem; /* Adjust input font size */
+    padding: 8px; /* Reduce padding */
+  }
+
+  button[type="submit"] {
+    font-size: 1rem; /* Adjust button size */
+    padding: 10px 15px; /* Reduce padding */
+  }
+}
+
+/* Further Adjustments for Very Small Screens */
+@media (max-width: 576px) {
+  /* Header */
+  header nav ul li a {
+    font-size: 0.8rem; /* Further reduce font size */
+    padding: 6px 10px; /* Adjust padding */
+  }
+
+  /* Hero Section */
+  #hero h1 {
+    font-size: 1.8rem; /* Reduce heading size */
+  }
+
+  #hero p {
+    font-size: 0.9rem; /* Adjust paragraph size */
+  }
+
+  #hero .btn {
+    font-size: 0.9rem; /* Adjust button size */
+    padding: 6px 12px; /* Reduce padding */
+  }
+
+  /* About Me Section */
+  #about h2 {
+    font-size: 1.8rem; /* Reduce heading size */
+  }
+
+  #about p {
+    font-size: 0.9rem; /* Adjust paragraph size */
+  }
+
+  .about-image img {
+    max-width: 100%; /* Ensure image fits the screen */
+  }
+
+  /* Skills & Tools Section */
+  #skills h2 {
+    font-size: 1.5rem; /* Reduce heading size */
+  }
+
+  .skills-container {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Smaller grid items */
+  }
+
+  /* Portfolio Section */
+  #portfolio h2 {
+    font-size: 1.8rem; /* Reduce heading size */
+  }
+
+  #portfolio section h3 {
+    font-size: 1.3rem; /* Adjust subsection heading size */
+  }
+
+  .category-buttons button {
+    font-size: 0.9rem; /* Adjust button size */
+    padding: 8px; /* Reduce padding */
+  }
+
+  /* Contact Section */
+  #contact h2 {
+    font-size: 1.8rem; /* Reduce heading size */
+  }
+
+  input,
+  textarea {
+    font-size: 0.9rem; /* Adjust input font size */
+    padding: 6px; /* Reduce padding */
+  }
+
+  button[type="submit"] {
+    font-size: 0.9rem; /* Adjust button size */
+    padding: 8px 12px; /* Reduce padding */
+  }
+}
+
+/* For mobile devices */
+@media (max-width: 768px) {
+  html {
+    /* Adjust this value for smaller headers on mobile */
+    scroll-padding-top: 50px;
+  }
 }
 
 

@@ -44,6 +44,32 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       });
     });
+
+    // ------------------------------
+    // 2.1. Highlight Active Navigation Link on Scroll
+    // ------------------------------
+    const sections = document.querySelectorAll("section");
+    const navLinksHighlight = document.querySelectorAll("nav ul li a");
+
+    window.addEventListener("scroll", () => {
+      let current = "";
+
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+
+        if (pageYOffset >= sectionTop - sectionHeight / 3) {
+          current = section.getAttribute("id");
+        }
+      });
+
+      navLinksHighlight.forEach((link) => {
+        link.classList.remove("active");
+        if (link.getAttribute("href").includes(current)) {
+          link.classList.add("active");
+        }
+      });
+    });
   
     // ------------------------------
     // 3. Portfolio Buttons: Navigate to Individual Pages
@@ -199,5 +225,108 @@ document.addEventListener("DOMContentLoaded", function () {
   setInterval(detectDevTools, 1000);
 
     }
+
+    // ------------------------------
+    // 11. Animate Skills Section on Scroll
+    // ------------------------------
+    const skillsSection = document.getElementById("skills");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            skillsSection.classList.add("animate");
+          }
+        });
+      },
+      { threshold: 0.2 } // Trigger when 20% of the section is visible
+    );
+
+    observer.observe(skillsSection);
+
+    // ------------------------------
+    // 12. Animate Circular Progress Bars Using Canvas
+    // ------------------------------
+    const skillsData = [
+      { id: "photoshopCanvas", percentage: 90, color: "#31A8FF" }, // Photoshop Blue
+      { id: "premiereCanvas", percentage: 85, color: "#9999FF" }, // Premiere Pro Purple
+      { id: "blenderCanvas", percentage: 80, color: "#F5792A" }, // Blender Orange
+      { id: "afterEffectsCanvas", percentage: 75, color: "#AE81FF" }, // After Effects Purple
+      { id: "htmlCssCanvas", percentage: 70, color: "#E44D26" }, // HTML & CSS Red
+      { id: "javascriptCanvas", percentage: 65, color: "#F7DF1E" }, // JavaScript Yellow
+    ];
+
+    function drawCircle(canvasId, percentage, color) {
+      const canvas = document.getElementById(canvasId);
+      if (!canvas || !canvas.getContext) return;
+
+      const ctx = canvas.getContext("2d");
+      const centerX = canvas.width / 2;
+      const centerY = canvas.height / 2;
+      const radius = 60;
+      const lineWidth = 10;
+      const startAngle = -Math.PI / 2;
+
+      let currentPercentage = 0;
+
+      function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        // Background Circle
+        ctx.beginPath();
+        ctx.arc(centerX, centerY, radius, 0, Math.PI * 2);
+        ctx.lineWidth = lineWidth;
+        ctx.strokeStyle = "#444"; // Background color for the circle
+        ctx.stroke();
+
+        // Progress Circle with Rounded Edges
+        ctx.beginPath();
+        ctx.arc(
+          centerX,
+          centerY,
+          radius,
+          startAngle,
+          (Math.PI * 2 * currentPercentage) / 100 - Math.PI / 2
+        );
+        ctx.lineWidth = lineWidth;
+        ctx.strokeStyle = color;
+        ctx.lineCap = "round"; // Rounded edges
+        ctx.stroke();
+
+        // Percentage Text
+        ctx.font = "16px Arial";
+        ctx.fillStyle = "#fff";
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+        ctx.fillText(`${currentPercentage}%`, centerX, centerY);
+
+        if (currentPercentage < percentage) {
+          currentPercentage++;
+          requestAnimationFrame(animate);
+        }
+      }
+
+      animate();
+    }
+
+    const canvasObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const skill = skillsData.find(
+              (skill) => skill.id === entry.target.id
+            );
+            if (skill) {
+              drawCircle(skill.id, skill.percentage, skill.color);
+            }
+          }
+        });
+      },
+      { threshold: 0.5 } // Trigger when 50% of the section is visible
+    );
+
+    skillsData.forEach((skill) => {
+      const canvas = document.getElementById(skill.id);
+      if (canvas) canvasObserver.observe(canvas);
+    });
   });
-  
